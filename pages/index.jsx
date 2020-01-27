@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import Field from '../components/field'
 import Help from '../components/help'
+import Button from '../components/button'
 import usePersistedState from '../components/use-persisted-state'
 
 export default () => {
-    const [budget, setBudget] = usePersistedState('budget', 0)
-    const [impressions, setImpressions] = usePersistedState('impressions', 0)
-    const [cpm, setCpm] = usePersistedState('cpm', 0)
+    const [budget, setBudget] = usePersistedState('budget', null)
+    const [impressions, setImpressions] = usePersistedState('impressions', null)
+    const [cpm, setCpm] = usePersistedState('cpm', null)
     const [error, setError] = useState('')
 
     // Reset errrors on changes
@@ -39,6 +40,12 @@ export default () => {
         setCpm((budget / (impressions / 1000)).toFixed(2))
     }
 
+    const handleOnReset = e => {
+        setCpm('')
+        setImpressions('')
+        setBudget('')
+    }
+
     return (
         <div className="bg-white h-screen">
             <div className="h-16 bg-gray-200 border-b border-gray-400 flex items-center justify-center w-100">
@@ -68,6 +75,8 @@ export default () => {
             >
                 CPM
             </Field>
+            <div className="px-4 pt-4">
+                <Button onClick={handleOnReset}>Reset</Button>
             </div>
             <Help error={error} />
         </div>
