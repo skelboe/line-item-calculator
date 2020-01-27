@@ -69,7 +69,7 @@ export default () => {
             </Field>
             <div className="p-4">
                 {error ? <div className="text-red-500 mb-4">{error}</div> : null}
-                <span className="text-gray-400">
+                <span className="text-gray-500">
                     Click on the refresh button on the right of the field you whish to calucalte.
                 </span>
             </div>
