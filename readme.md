@@ -1,6 +1,7 @@
-# Next.js with tailwindcss
+# Line item calculator
 
-A simple boilerplate for getting started with next.js and tailwind
+A simple web mobile tool for calculating CPM based on budget and impressions,
+or impressions based on budget and CPM.
 
 ## Make it works
 
