@@ -47,7 +47,7 @@ export default () => {
     }
 
     return (
-        <div className="bg-white h-screen">
+        <div className="bg-white">
             <div className="h-16 bg-gray-200 border-b border-gray-400 flex items-center justify-center w-100">
                 <h1 className="text-xl">Line Order Calculator</h1>
             </div>
