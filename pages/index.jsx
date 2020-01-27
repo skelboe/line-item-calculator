@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Field from '../components/field'
+import Help from '../components/help'
 import usePersistedState from '../components/use-persisted-state'
 
 export default () => {
@@ -67,12 +68,8 @@ export default () => {
             >
                 CPM
             </Field>
-            <div className="p-4">
-                {error ? <div className="text-red-500 mb-4">{error}</div> : null}
-                <span className="text-gray-500">
-                    Click on the refresh button on the right of the field you whish to calucalte.
-                </span>
             </div>
+            <Help error={error} />
         </div>
     )
 }
